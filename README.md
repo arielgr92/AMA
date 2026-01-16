@@ -1,2 +1,0 @@
-# AMA
-Ariel Music Awards
