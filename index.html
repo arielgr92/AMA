@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariel Music Award | Album of the Year 2005-2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .font-bebas {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #1a0a1f 0%, #0a0a0a 50%, #0f0a15 100%);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(4rem, 15vw, 12rem);
+            letter-spacing: 0.1em;
+            line-height: 0.9;
+            background: linear-gradient(180deg, #ffd700 0%, #ffb347 30%, #b8860b 70%, #daa520 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 80px rgba(255, 215, 0, 0.5);
+            animation: title-glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes title-glow {
+            from { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5)); }
+            to { filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.8)); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(236, 72, 153, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            letter-spacing: 0.1em;
+            background: linear-gradient(90deg, #ffd700, #daa520, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #ec4899;
+        }
+
+        .nav-link.active {
+            color: #ec4899;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ec4899, #9333ea);
+            border-radius: 1px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: #111111;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        .search-box input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .filter-select {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .sort-btn {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Album Cards */
+        .album-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .album-card {
+            background: #111111;
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: auto 120px 1fr auto;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        .album-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.3), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .album-card:hover {
+            background: #151515;
+            transform: translateX(4px);
+        }
+
+        .album-card:hover::before {
+            opacity: 1;
+        }
+
+        .album-card.winner-2025 {
+            border: 2px solid #ec4899;
+            background: linear-gradient(90deg, rgba(236, 72, 153, 0.1) 0%, #111111 100%);
+        }
+
+        .album-card.tbd {
+            opacity: 0.5;
+        }
+
+        .album-card.tbd:hover {
+            opacity: 0.7;
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, #ec4899 0%, #9333ea 100%);
+            color: white;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 80px;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+        }
+
+        .year-badge.tbd-year {
+            background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+            box-shadow: none;
+        }
+
+        .album-cover {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .album-card:hover .album-cover {
+            transform: scale(1.05);
+        }
+
+        .album-cover.placeholder {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 2rem;
+        }
+
+        .album-info {
+            flex: 1;
+        }
+
+        .album-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .crown-icon {
+            color: #fbbf24;
+            animation: crown-shine 2s ease-in-out infinite;
+        }
+
+        @keyframes crown-shine {
+            0%, 100% { opacity: 1; filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.5)); }
+            50% { opacity: 0.8; filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.8)); }
+        }
+
+        .album-artist {
+            color: #ec4899;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .album-artist::before {
+            content: '●';
+            font-size: 0.5rem;
+        }
+
+        .album-meta {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .album-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ec4899 0%, #9333ea 100%);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: #ec4899;
+            color: #ec4899;
+        }
+
+        /* Multiple Winners Card */
+        .multi-winner-card {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, #111111 100%);
+            border: 2px solid #ec4899;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .multi-winner-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(236, 72, 153, 0.3);
+        }
+
+        .multi-winner-year {
+            background: linear-gradient(135deg, #ec4899 0%, #9333ea 100%);
+            color: white;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+        }
+
+        .multi-winner-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .winners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .winner-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .winner-item:hover {
+            background: rgba(236, 72, 153, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .winner-item .album-cover {
+            width: 80px;
+            height: 80px;
+        }
+
+        .winner-item .album-info {
+            flex: 1;
+        }
+
+        .winner-item .album-title {
+            font-size: 1rem;
+        }
+
+        .winner-item .album-artist {
+            font-size: 0.9rem;
+        }
+
+        /* Banner Section */
+        .banner {
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .banner-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .banner-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .banner-text {
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            border-top: 1px solid #1a1a1a;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section a,
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ec4899;
+        }
+
+        .footer-subscribe {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .footer-subscribe input {
+            flex: 1;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            color: white;
+            outline: none;
+        }
+
+        .footer-subscribe button {
+            background: linear-gradient(135deg, #ec4899 0%, #9333ea 100%);
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-subscribe button:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid #1a1a1a;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            background: linear-gradient(90deg, #ffd700, #daa520, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: linear-gradient(135deg, #ec4899 0%, #9333ea 100%);
+            color: white;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+            text-align: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .page-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .page-btn:hover,
+        .page-btn.active {
+            background: linear-gradient(135deg, #ec4899 0%, #9333ea 100%);
+        }
+
+        .page-btn.nav-arrow {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page-btn.nav-arrow:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .album-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .year-badge {
+                margin: 0 auto;
+            }
+
+            .album-cover {
+                margin: 0 auto;
+            }
+
+            .album-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-subtitle {
+                letter-spacing: 0.2em;
+                font-size: 1rem;
+            }
+
+            .winners-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .album-card:nth-child(1) { animation-delay: 0.1s; }
+        .album-card:nth-child(2) { animation-delay: 0.15s; }
+        .album-card:nth-child(3) { animation-delay: 0.2s; }
+        .album-card:nth-child(4) { animation-delay: 0.25s; }
+        .album-card:nth-child(5) { animation-delay: 0.3s; }
+        .album-card:nth-child(6) { animation-delay: 0.35s; }
+        .album-card:nth-child(7) { animation-delay: 0.4s; }
+        .album-card:nth-child(8) { animation-delay: 0.45s; }
+        .album-card:nth-child(9) { animation-delay: 0.5s; }
+        .album-card:nth-child(10) { animation-delay: 0.55s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">ARIEL MUSIC AWARD</a>
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Winners</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">WINNERS</h1>
+            <p class="hero-subtitle">Ariel Music Award • 2005-2025</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="search-box">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search Albums">
+            </div>
+            <select class="filter-select">
+                <option>All Years</option>
+                <option>2020s</option>
+                <option>2010s</option>
+                <option>2000s</option>
+            </select>
+            <button class="sort-btn">
+                Newest
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="m6 9 6 6 6-6"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Album Grid -->
+        <div class="album-grid">
+            <!-- 2025 - Multiple Winners -->
+            <div class="multi-winner-card fade-in">
+                <div class="multi-winner-header">
+                    <div class="multi-winner-year">2025</div>
+                    <div class="multi-winner-title">
+                        <span class="crown-icon">👑</span>
+                        3 WINNERS - TRIPLE CROWN YEAR
+                    </div>
+                </div>
+                <div class="winners-grid">
+                    <div class="winner-item">
+                        <img src="https://i.scdn.co/image/ab67616d0000b2739e0ff46d94b7048a42f3b95e" alt="Breach" class="album-cover" onerror="this.style.display='none'">
+                        <div class="album-info">
+                            <div class="album-title">Breach</div>
+                            <div class="album-artist">Twenty One Pilots</div>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                <a href="https://open.spotify.com/album/1El3k8dU3sKyoGUeuyrolH" target="_blank" class="action-btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Spotify</a>
+                                <a href="https://www.youtube.com/results?search_query=Twenty+One+Pilots+Breach+album" target="_blank" class="action-btn btn-secondary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="winner-item">
+                        <img src="https://i.scdn.co/image/ab67616d0000b27319d85a472f328a6ed9571076" alt="Private Music" class="album-cover" onerror="this.style.display='none'">
+                        <div class="album-info">
+                            <div class="album-title">private music</div>
+                            <div class="album-artist">Deftones</div>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                <a href="https://open.spotify.com/album/1gmWnG5TeRj91Tdm2lpEvJ" target="_blank" class="action-btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Spotify</a>
+                                <a href="https://www.youtube.com/results?search_query=Deftones+Private+Music+album" target="_blank" class="action-btn btn-secondary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="winner-item">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273a1f5e8f4ec5f78f14aa7b879" alt="Never Enough" class="album-cover" onerror="this.style.display='none'">
+                        <div class="album-info">
+                            <div class="album-title">NEVER ENOUGH</div>
+                            <div class="album-artist">Turnstile</div>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                <a href="https://open.spotify.com/album/52yD51X7yDinwlg6tbCtpP" target="_blank" class="action-btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">Spotify</a>
+                                <a href="https://www.youtube.com/results?search_query=Turnstile+Never+Enough+album" target="_blank" class="action-btn btn-secondary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;">YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2024 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2024</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b27325f1b8c8f90e5ce2fac45f22" alt="F-1 Trillion" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">F-1 Trillion</div>
+                    <div class="album-artist">Post Malone</div>
+                    <div class="album-meta">Country • Released August 16, 2024</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://music.apple.com/us/album/f-1-trillion/1752531522" target="_blank" class="action-btn btn-primary">Listen</a>
+                    <a href="https://www.youtube.com/results?search_query=Post+Malone+F-1+Trillion+album" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+
+            <!-- 2023 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2023</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2022</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd535f65fd" alt="SOUR" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">SOUR</div>
+                    <div class="album-artist">Olivia Rodrigo</div>
+                    <div class="album-meta">Pop • Released May 21, 2021</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://open.spotify.com/album/6s84u2TUpR3wdUv4NgKA2j" target="_blank" class="action-btn btn-primary">Spotify</a>
+                    <a href="https://www.youtube.com/results?search_query=Olivia+Rodrigo+SOUR+album" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+
+            <!-- 2021 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2021</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b27373c1e19c6a786f5a1d89892c" alt="Lifeforms" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">Lifeforms</div>
+                    <div class="album-artist">Angels & Airwaves</div>
+                    <div class="album-meta">Alternative Rock • Released September 24, 2021</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://open.spotify.com/album/1L2WMscEtaCxbbyFP8LbEu" target="_blank" class="action-btn btn-primary">Spotify</a>
+                    <a href="https://www.youtube.com/results?search_query=Angels+and+Airwaves+Lifeforms+album" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+
+            <!-- 2020 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2020</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2019 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2019</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2018 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2018</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b273b1c4b76e23414c9f20242268" alt="beerbongs & bentleys" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">beerbongs & bentleys</div>
+                    <div class="album-artist">Post Malone</div>
+                    <div class="album-meta">Hip-Hop/Pop • Released April 27, 2018</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://open.spotify.com/album/6trNtQUgC8cgbWcqoMYkOR" target="_blank" class="action-btn btn-primary">Spotify</a>
+                    <a href="https://www.youtube.com/results?search_query=Post+Malone+beerbongs+bentleys+album" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+
+            <!-- 2017 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2017</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2016 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2016</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2015 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2015</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2014 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2014</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2013 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2013</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b2739b9b36b0e22870b9f542d937" alt="Random Access Memories" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">Random Access Memories</div>
+                    <div class="album-artist">Daft Punk</div>
+                    <div class="album-meta">Electronic/Disco • Released May 17, 2013</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa" target="_blank" class="action-btn btn-primary">Spotify</a>
+                    <a href="https://www.youtube.com/results?search_query=Daft+Punk+Random+Access+Memories+album" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+
+            <!-- 2012 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2012</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2011 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2011</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2010 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2010</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b273e5c95f0dca39c5c8f3b9b6d1" alt="Love" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">Love</div>
+                    <div class="album-artist">Angels & Airwaves</div>
+                    <div class="album-meta">Alternative Rock • Released February 14, 2010</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://open.spotify.com/album/0FvwxpJdNjwCHbQPbBNpDy" target="_blank" class="action-btn btn-primary">Spotify</a>
+                    <a href="https://www.youtube.com/results?search_query=Angels+and+Airwaves+Love+album+2010" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+
+            <!-- 2009 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2009</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2008 - TBD -->
+            <div class="album-card tbd fade-in">
+                <div class="year-badge tbd-year">2008</div>
+                <div class="album-cover placeholder">?</div>
+                <div class="album-info">
+                    <div class="album-title" style="color: rgba(255,255,255,0.5)">TBD Soon</div>
+                    <div class="album-artist" style="color: rgba(236, 72, 153, 0.5)">Winner Coming Soon</div>
+                    <div class="album-meta">Stay tuned for announcement</div>
+                </div>
+                <div class="album-actions">
+                    <button class="action-btn btn-secondary" disabled>Pending</button>
+                </div>
+            </div>
+
+            <!-- 2007 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2007</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b2736f17d67457c3f3b1c0f7a6e7" alt="I-Empire" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">I-Empire</div>
+                    <div class="album-artist">Angels & Airwaves</div>
+                    <div class="album-meta">Alternative Rock • Released November 6, 2007</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://open.spotify.com/album/3P3rPHHsZgb67zSVxDpMgQ" target="_blank" class="action-btn btn-primary">Spotify</a>
+                    <a href="https://www.youtube.com/results?search_query=Angels+and+Airwaves+I-Empire+album" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+
+            <!-- 2006 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2006</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b27380368f0aa8f90c51674f9dd2" alt="When Your Heart Stops Beating" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">When Your Heart Stops Beating</div>
+                    <div class="album-artist">+44 (Mark Hoppus)</div>
+                    <div class="album-meta">Alternative Rock • Released November 13, 2006</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://open.spotify.com/album/3wAdN3V06PjtzCp8VdYDI1" target="_blank" class="action-btn btn-primary">Spotify</a>
+                    <a href="https://www.youtube.com/results?search_query=%2B44+When+Your+Heart+Stops+Beating+album" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+
+            <!-- 2005 -->
+            <div class="album-card fade-in">
+                <div class="year-badge">2005</div>
+                <img src="https://i.scdn.co/image/ab67616d0000b27386ca5f24d91cd8e57cb3e939" alt="Meteora" class="album-cover" onerror="this.classList.add('placeholder'); this.innerHTML='♫'">
+                <div class="album-info">
+                    <div class="album-title">Meteora</div>
+                    <div class="album-artist">Linkin Park</div>
+                    <div class="album-meta">Nu Metal/Alternative • Released March 25, 2003</div>
+                </div>
+                <div class="album-actions">
+                    <a href="https://open.spotify.com/album/0f7R0jf0pcTb6K6IHnNjnI" target="_blank" class="action-btn btn-primary">Spotify</a>
+                    <a href="https://www.youtube.com/results?search_query=Linkin+Park+Meteora+album" target="_blank" class="action-btn btn-secondary">YouTube</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            <div class="banner-icon">
+                <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+            </div>
+            <h3 class="banner-title">ALBUM PICKS FOR A MUSIC LOVER</h3>
+            <p class="banner-text">Curated selections spanning two decades of musical excellence</p>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn nav-arrow">&lt;</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <button class="page-btn nav-arrow">&gt;</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CONTACT US</h4>
+                    <p>✉ contact@albumawards.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>KEEP UP TO DATE</h4>
+                    <p>Sign up to receive exclusive updates & pre-sale links before anyone else!</p>
+                    <div class="footer-subscribe" style="margin-top: 1rem;">
+                        <input type="email" placeholder="Enter email...">
+                        <button>SUBSCRIBE</button>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>QUICK LINKS</h4>
+                    <a href="#">Work with us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Archive</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-logo">ARIEL MUSIC AWARD</span>
+                <div class="footer-social">
+                    <a href="#">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-copyright">© Ariel Music Award 2025 | Site designed with ♥</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add scroll effect to nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.8)';
+            }
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-box input');
+        const albumCards = document.querySelectorAll('.album-card, .multi-winner-card');
+        
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            albumCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
